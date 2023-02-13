@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="../../script.js" defer></script>
+    <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <title>Car Data</title>
+</head>
+<body>
+    <main>
+        <section class="project-wrapper">
+
+            <h2>
+                Selling car data
+            </h2>
+            
+            <div>
+                <a href="https://github.com/victoras24/car_data/blob/master/DataCleaning/data_cleaned.csv">Download data</a>
+                <a href="">SQL Code</a>
+            </div>
+
+        </section>
+
+            <hr />
+
+        <section class="paragraph-wrapper">
+
+          <p>This project explores the used car market in Cyprus through an analysis of data obtained from the country&apos;s most popular website for selling cars. The data was scraped using the library in Python named <a href="https://github.com/victoras24/car_data/blob/master/DataCollection/BazarakiScrab.ipynb"target="_blank">BeautifulSoup</a> and includes information such as brand, model, year, engine type, fuel type, and location of the vehicles. The data was then compiled in a single sheet using <a href="https://github.com/victoras24/car_data/blob/master/DataCollection/MakingSoup.ipynb"target="_blank">BeautifulSoup</a> libary again and exported in .csv format. The data was also <a href="https://github.com/victoras24/car_data/blob/master/DataCleaning/SoupCleaning.ipynb"target="_blank">cleaned</a> by separating each piece of information into different columns and removing symbols, NaN values that could affect the analysis.
+<p><br></p>
+
+<p>Looking at the data, immediately some questions that I wanted to answer appeared.</p>
+<p><br></p>
+<p>1. Which city has the highest number of car sales?</p>
+<p>2. What are the best-selling brands?</p>
+<p>3. Which type of transmission is most commonly used in each city?</p>
+<p>4. Is there any correlation between (km) and price of a car?</p>
+<p><br></p>
+<p><br></p>
+
+        </section>
+
+        <section class="analysis-wrapper">
+
+            <h3>
+            
+                Data analysis
+            
+            </h3>   
+            
+            <p><br></p>
+
+            <p>
+
+                Starting the <a href="https://github.com/victoras24/car_data/blob/master/DataAnalysis/Analysis.ipynb"target="_blank">analysis</a>, I wanted to make sure that the type of the numerical values is numeric or float. So I proceeded with changing the type of each numeric column to float or numeric. Now, we can start investigating the data. 
+                
+                <br>
+                <br>
+
+                First, let's find out which city has the highest number of car sales.
+
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="700" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/2.embed"></iframe>
+
+            <p><br></p>
+            <p><br></p>
+
+            <p>
+                As you can see, Limassol has the most cars for sale and Famagusta has the least. 
+                The population is certainly a criteria that puts Limassol 1st and Famagusta last. Now, let's find what is the mean price for each city.
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="700" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/12.embed"></iframe>
+
+            <p><br></p>
+            <p><br></p>
+
+            <p>
+                Looking at the plot, it is clear that Nicosia has a higher mean price than Limassol, 
+                despite the fact that Limassol has more cars for sale as seen in the previous plot. This could 
+                indicate greater competition among car dealers in Limassol, resulting in a larger supply of cars and 
+                potentially lower prices. On the other hand, it could also reflect the different economic conditions in 
+                the two cities, where Nicosia may have a stronger economy with higher demand for cars, leading to higher prices.
+            </p>
+
+            <p><br></p>
+
+            <p>
+                I wanted also to see what are the best selling brands. By analyzing this information, we can gain mini insights into consumer preferences and market trends.
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="1100" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/14.embed"></iframe>
+            <p><br></p>
+            <p><br></p>
+
+            <p>
+                Hmmmm, let's make a top ten list so we can have a clear overview of the plot and arrange it in descending order.
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="700" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/17.embed"></iframe>
+        
+            <p><br></p>
+            <p><br></p>
+
+            <p>
+
+                By far, Mercedes is the brand that is being sold the most, as indicated by the plot I analyzed.
+                This result suggests that Mercedes has a strong market presence and high consumer demand, possibly due to its reputation for luxury and quality. 
+                However, it's worth noting that this conclusion is based on data from a specific car marketplace website and may not reflect the entire global market for cars.
+
+            </p>
+
+            <p><br></p>
+
+            <p>
+
+                I wanted to find out which transmission is the most commonly used among all the cars being sold. 
+                Although I had an idea of the answer, I wanted to see a plot to better understand the difference. 
+
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+        <ul class="trans-count">    
+
+            <li>
+
+                <iframe width="600" height="450" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/29.embed"></iframe>
+            
+            </li>
+
+            <li>
+
+                <img src="https://github.com/victoras24/portfolio/blob/main/assets/trans-count.png?raw=true" alt="">
+            
+            </li>
+
+        </ul>
+
+        <p><br></p>
+        <p><br></p>
+
+        <p>
+            
+            Based on the data, it's clear that the majority of cars sold (71.6%) have automatic transmissions, 
+            while manual transmissions account for 28.2%. The remaining vehicles are those without gearboxes. 
+            To determine whether the trend towards automatic transmissions is due to the popularity of newer cars, 
+            we can conduct further analysis to see if most of the vehicles sold are relatively new. It's possible 
+            that the high number of automatic transmissions could be attributed to both their ease of use and the 
+            increased availability of these features in newer vehicles. Further investigation will give us a better 
+            understanding of the driving factors behind this trend.
+
+        </p>
+
+        <p><br></p>
+        <p><br></p>
+
+        <iframe width="1100" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/40.embed"></iframe>
+
+        <p><br></p>
+        <p><br></p>
+
+        <p>
+
+            Most of the cars in our data are 10 years old, which could be a reason for having more automatic 
+            transmissions than manual transmissions.
+
+        </p>
+
+        <p><br></p>
+
+        <p>
+
+            Lastly, I wanted to examine if there is any correlation between the number of kilometers driven and the price of a car
+
+        </p>
+
+        <p><br></p>
+        <p><br></p>
+
+        <iframe width="1100" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/42.embed"></iframe>
+
+        <p><br></p>
+        <p><br></p>
+
+        <p>
+
+            I had to remove outliers that were affecting my analysis and plot. Some of the values for kilometers were displayed as extremely high, such as 1111111111 and 555555555. 
+            So, to resolve this, I eliminated all kilometers values that were greater than 1 million.<p><br></p> <pre><code>drop_outliers = data_frame[data_frame['Km'] < 1000000]</code></pre><p><br></p>
+            
+            <p>
+                
+                There is a negative correlation between the price and number of kilometers driven. Typically, more expensive cars have lower kilometers driven. However, there are some exceptions, such as a Mercedes with 400,000 kilometers driven and a price of 150,000. 
+                I used the following query to gather more information about this specific car.
+                <p><br></p> <pre><code>drop_outliers.query('Brand == "Mercedes-Benz" and Price == 155000 and Km == 400000')</code></pre>
+
+            </p> 
+
+            <p><br></p>
+
+            <p>
+
+                To conclude, I am wrapping up my first project on the analysis of car data collected from a marketplace 
+                website. I have included a pairplot that you can explore to uncover interesting insights. Please check out 
+                my Git repository to access the Jupyter notebook where I conducted data collection, export, cleaning, processing, and analysis.
+            
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="1100" height="550" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/43.embed"></iframe>
+
+            <p><br></p>
+            <p><br></p>
+
+        </section>
+    
+    </main>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+:root {
+  font-size: 10px;
+  font-family: "Century Gothic", sans-serif;
+  --primary: #1f1f1f;
+  --secondary: #f1f1f1;
+  --grey: #3b3b3b;
+  --red: #ff8bff;
+  --title: 3rem;
+  --gap: 2rem;
+}
+
+title {
+  display: none;
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: none;
+  text-decoration: none;
+  font-weight: 400;
+  list-style: none;
+  color: var(--secondary);
+  order: 1;
+}
+
+body {
+  display: grid;
+  grid-template: min-content / 100vw;
+  min-height: 100vh;
+  background-color: var(--primary);
+  gap: calc(var(--gap) * 2.5);
+}
+
+nav {
+  height: 6rem;
+  background-color: var(--grey);
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+  order: 0;
+}
+
+nav > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.blinker {
+  background-color: var(--red);
+  display: flex;
+  height: 1.5rem;
+  width: 1rem;
+  animation: cursor 1.4s linear infinite;
+}
+
+footer {
+  width: 100vw;
+  height: 2.4rem;
+  background-color: var(--grey);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-self: end;
+}
+
+hr {
+  height: 1px;
+  width: 83vw;
+  justify-self: center;
+  background-color: var(--secondary);
+  margin-top: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+main > hr + * {
+  margin-top: -1.5rem;
+}
+
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
+}
