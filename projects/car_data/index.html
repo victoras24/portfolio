@@ -222,14 +222,14 @@
         <p>
 
             I had to remove outliers that were affecting my analysis and plot. Some of the values for kilometers were displayed as extremely high, such as 1111111111 and 555555555. 
-            So, to resolve this, I eliminated all kilometers values that were greater than 1 million.<p><br></p> <pre><code>drop_outliers = data_frame[data_frame['Km'] < 1000000]</code></pre><p><br></p>
+            So, to resolve this, I eliminated all kilometers values that were greater than 1 million.<p><br></p> <pre><code>drop_outliers = data_frame[data_frame['Km'] < 1000000]</code></pre> <img src="https://github.com/victoras24/portfolio/blob/main/assets/code1.png?raw=true" alt=""><p><br></p>
             
             <p>
                 
                 There is a negative correlation between the price and number of kilometers driven. Typically, more expensive cars have lower kilometers driven. However, there are some exceptions, such as a Mercedes with 400,000 kilometers driven and a price of 150,000. 
                 I used the following query to gather more information about this specific car.
                 <p><br></p> <pre><code>drop_outliers.query('Brand == "Mercedes-Benz" and Price == 155000 and Km == 400000')</code></pre>
-
+                <img src="https://github.com/victoras24/portfolio/blob/main/assets/code2.png?raw=true" alt="">
             </p> 
 
             <p><br></p>

@@ -100,7 +100,7 @@ iframe {
 @media only screen and (max-width: 600px) {
   main {
     padding: 2rem;
-    padding-inline: 4rem;
+    padding-inline: 1rem;
     font-family: "Century Gothic", sans-serif;
   }
   .project-wrapper {
@@ -170,11 +170,19 @@ iframe {
 
   img {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90vw;
     height: auto;
     margin: auto;
   }
 
+  pre code {
+    display: none;
+  }
+  
+  }
   iframe {
     display: none;
   }
