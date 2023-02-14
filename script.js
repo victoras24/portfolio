@@ -34,8 +34,8 @@ document.querySelectorAll("a").forEach((a) => {
 window.addEventListener("resize", () => {
   if (window.screenX < 600) {
     document.querySelectorAll("iframe").forEach((element) => {
-      element.height = window.innerWidth
-      element.width = window.innerWidth * 0.5
+      element.height = window.innerWidth 
+      element.width = window.innerWidth 
       element.scrolling = "yes"
     })
 
