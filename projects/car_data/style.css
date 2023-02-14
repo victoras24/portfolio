@@ -179,11 +179,10 @@ iframe {
   }
 
   pre code {
-    display: none;
-  }
-
+    display: none
+    
   }
   iframe {
     display: none;
   }
-
+}
