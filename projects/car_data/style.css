@@ -92,16 +92,17 @@ iframe {
 @media only screen and (max-width: 600px) {
   main {
     padding: 2rem;
-    padding-inline: 4rem;
+    padding-inline: 1rem;
     font-family: "Century Gothic", sans-serif;
   }
+
   .project-wrapper {
     flex-direction: column;
   }
 
   body {
-    display: flex;
-    flex-direction: column;
+    max-width: max-content;
+    grid-template: min-content/auto;
     margin: 0;
     font-size: 2rem;
   }
@@ -161,6 +162,7 @@ iframe {
   }
 
   iframe {
-    width: 100%;
+    width: 60rem;
+    height: 45rem;
   }
 }
