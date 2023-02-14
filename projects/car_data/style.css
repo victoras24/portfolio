@@ -84,6 +84,14 @@ pre code {
   font-size: 1.5rem;
 }
 
+img {
+  display: none;
+}
+
+img.transmission-count {
+  display: block;
+}
+
 iframe {
   display: block;
   margin: 0 auto;
@@ -160,7 +168,14 @@ iframe {
     margin: auto;
   }
 
+  img {
+    display: flex;
+    width: 90vw;
+    height: auto;
+    margin: auto;
+  }
+
   iframe {
-    width: 100%;
+    display: none;
   }
 }
