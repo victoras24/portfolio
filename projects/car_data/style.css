@@ -97,7 +97,7 @@ iframe {
   }
 
   .project-wrapper {
-
+    width: max-content;
   }
 
   body {
