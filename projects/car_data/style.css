@@ -91,7 +91,8 @@ iframe {
 
 @media only screen and (max-width: 600px) {
   main {
-    padding-inline: 0.5rem;
+    padding: 2rem;
+    padding-inline: 4rem;
     font-family: "Century Gothic", sans-serif;
   }
   .project-wrapper {
