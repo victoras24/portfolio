@@ -36,8 +36,6 @@
           <p><br></p>
           <p>Sentiment analysis is a natural language processing technique that involves extracting subjective information from text data, such as opinions, attitudes, emotions, and feelings. It involves analyzing the text to determine whether the expressed sentiment is positive, negative, or neutral. Sentiment analysis is widely used in various industries, including marketing, customer service, product development, and political analysis. By applying sentiment analysis to reviews of a local restaurant, we can gain insights into customers' experiences and opinions about the food, service, and ambiance, which can help the restaurant improve its offerings and increase customer satisfaction.</p>
           <p><br></p>
-          <p>In this notebook, I will only demonstrate the process of analyzing and visualizing the data. If you want to explore the collection, cleaning, and extraction of sentiment scores using Transformers Pipeline, please check the links above.</p>
-          <p><br></p>
           
         </section>
 
@@ -146,7 +144,7 @@
                 <img class="pie-char" src="../../assets/commonwords1.png" alt="">
 
             </li>
-
+            
             <li>
 
                 <img class="transmission-count" src="../../assets/commonwords2.png" alt="">
@@ -160,13 +158,7 @@
 
         <p>
             
-            Based on the data, it's clear that the majority of cars sold (71.6%) have automatic transmissions, 
-            while manual transmissions account for 28.2%. The remaining vehicles are those without gearboxes. 
-            To determine whether the trend towards automatic transmissions is due to the popularity of newer cars, 
-            we can conduct further analysis to see if most of the vehicles sold are relatively new. It's possible 
-            that the high number of automatic transmissions could be attributed to both their ease of use and the 
-            increased availability of these features in newer vehicles. Further investigation will give us a better 
-            understanding of the driving factors behind this trend.
+            Finally, I will select some dishes from the menu and search for them within the reviews. Additionally, I will analyze the sentiment of each dish by counting the number of positive and negative reviews for each one. To gather information about the cocktails, I will also look at the clients' opinions on them. 
 
         </p>
 
@@ -198,46 +190,19 @@
         <p><br></p>
         <p><br></p>
 
-        <iframe width="1100" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/42.embed"></iframe>
+        <iframe width="1100" height="500" frameborder="0" scrolling="no" src="//plotly.com/~fin17217/55.embed"></iframe>
 
-        <img src="https://github.com/victoras24/portfolio/blob/main/assets/correlation.png?raw=true" alt="">
+        <img src="../../assets/menu-sentiment.png" alt="">
 
         <p><br></p>
         <p><br></p>
 
-        <p>
-
-            I had to remove outliers that were affecting my analysis and plot. Some of the values for kilometers were displayed as extremely high, such as 1111111111 and 555555555. 
-            So, to resolve this, I eliminated all kilometers values that were greater than 1 million.<p><br></p> <pre><code>drop_outliers = data_frame[data_frame['Km'] < 1000000]</code></pre> <img src="https://github.com/victoras24/portfolio/blob/main/assets/code1.png?raw=true" alt=""><p><br></p>
-            
-            <p>
-                
-                There is a negative correlation between the price and number of kilometers driven. Typically, more expensive cars have lower kilometers driven. However, there are some exceptions, such as a Mercedes with 400,000 kilometers driven and a price of 150,000. 
-                I used the following query to gather more information about this specific car.
-                <p><br></p> <pre><code>drop_outliers.query('Brand == "Mercedes-Benz" and Price == 155000 and Km == 400000')</code></pre>
-                <img src="https://github.com/victoras24/portfolio/blob/main/assets/code2.png?raw=true" alt="">
-            </p> 
-
-            <p><br></p>
 
             <p>
 
-                To conclude, I am wrapping up my first project on the analysis of car data collected from a marketplace 
-                website. I have included a pairplot that you can explore to uncover interesting insights. Please check out 
-                my Git repository to access the Jupyter notebook where I conducted data collection, export, cleaning, processing, and analysis.
-            
+                It seems like our cocktails are very popular among customers! However, based on the reviews, the kitchen might want to work on the potatoes, fish, margarita, chicken, and prawns dishes, as they have received the highest number of negative reviews compared to other dishes. 
+             
             </p>
-
-            <p><br></p>
-            <p><br></p>
-
-            <iframe width="1100" height="550" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/43.embed"></iframe>
-
-
-            <img src="https://github.com/victoras24/portfolio/blob/main/assets/pair-plot.png?raw=true" alt="">
-
-            <p><br></p>
-            <p><br></p>
 
         </section>
     
