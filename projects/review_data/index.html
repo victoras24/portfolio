@@ -1,36 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="../../script.js" defer></script>
-    <title>Sentiment Analysis of reviews</title>
-  </head>
-  <body>
-
-      <main>
-
+    <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <main>
         <section class="project-wrapper">
 
-          <h2>
-              Selling car data
-          </h2>
+            <h2>
+              Sentiment analysis of local restaurants' reviews
+            </h2>
+            
+            <div>
+                <a href="https://github.com/victoras24/sentiment_analysis/blob/main/sentiment_analysis/sentiment_data.csv">View data</a>
+                <!-- <a href="">SQL Code</a> -->
+            </div>
+
+        </section>
+
+            <hr />
+
+        <section class="paragraph-wrapper">
+
+          <p>In this project, I will attempt to perform sentiment analysis on a dataset that I collected from reviews of a famous local restaurant where I worked during the seasonal times while studying. As usual, I used Selenium to collect the dataset and then compiled the data into a single CSV using BeautifulSoup. Please check out the <a href="https://github.com/victoras24/sentiment_analysis/tree/main/data_collection">code</a> that I used to scrape and compile the review data from Trip Advisor. Lastly, I used Python in Jupyter notebooks to <a href="https://github.com/victoras24/sentiment_analysis/blob/main/data_processing/sentiment_cleaning.ipynb">clean</a>, process, analyze, and visualize the data along with the sentiment score that I extracted using the <a href="https://github.com/victoras24/sentiment_analysis/blob/main/data_processing/sentiment_cleaning.ipynb">Transformers Pipeline</a>.</p>
+          <p><br></p>
+          <p>Sentiment analysis is a natural language processing technique that involves extracting subjective information from text data, such as opinions, attitudes, emotions, and feelings. It involves analyzing the text to determine whether the expressed sentiment is positive, negative, or neutral. Sentiment analysis is widely used in various industries, including marketing, customer service, product development, and political analysis. By applying sentiment analysis to reviews of a local restaurant, we can gain insights into customers' experiences and opinions about the food, service, and ambiance, which can help the restaurant improve its offerings and increase customer satisfaction.</p>
+          <p><br></p>
+          <p>In this notebook, I will only demonstrate the process of analyzing and visualizing the data. If you want to explore the collection, cleaning, and extraction of sentiment scores using Transformers Pipeline, please check the links above.</p>
+          <p><br></p>
           
-          <div>
-              <a href="https://github.com/victoras24/car_data/blob/master/DataCleaning/data_cleaned.csv">Download data</a>
-              <a href="">SQL Code</a>
-          </div>
+        </section>
 
-      </section>
+        <section class="analysis-wrapper">
 
-          <hr />
+            <h3>
+            
+                Data analysis
+            
+            </h3>   
+            
+            <p><br></p>
 
-      <section class="paragraph-wrapper">
+            <p>
+
+                For a warm-up, we can look at the dataset and read each column separately.
+                
+                <br>
+                <br>
+
+                The first question that comes to mind when looking at the data is: what is the count of reviews by star rating?
+
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~fin17217/45.embed"></iframe>
+            
+            
+            <img src="https://github.com/victoras24/portfolio/blob/main/assets/no-of-car.png?raw=true" alt="Number of car sales">
+
+            <p><br></p>
+            <p><br></p>
+
+            <p>
+                As we can see, the reviews mostly consist of 5 stars. As we move to lower star ratings, the number of reviews decreases. This indicates that, overall, the products/service has received mostly positive reviews. Let us now group the data into the sentiment for each year and plot it.
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~fin17217/47.embed"></iframe>
+
+            <img src="https://github.com/victoras24/portfolio/blob/main/assets/mean-price.png?raw=true" alt="">
+
+            <p><br></p>
+            <p><br></p>
+
+            <p>
+                Looking at the plot, it is clear that Nicosia has a higher mean price than Limassol, 
+                despite the fact that Limassol has more cars for sale as seen in the previous plot. This could 
+                indicate greater competition among car dealers in Limassol, resulting in a larger supply of cars and 
+                potentially lower prices. On the other hand, it could also reflect the different economic conditions in 
+                the two cities, where Nicosia may have a stronger economy with higher demand for cars, leading to higher prices.
+            </p>
+
+            <p><br></p>
+
+            <p>
+                I wanted also to see what are the best selling brands. By analyzing this information, we can gain mini insights into consumer preferences and market trends.
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="1100" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/14.embed"></iframe>
+            
+            <img src="https://github.com/victoras24/portfolio/blob/main/assets/best-selling.png?raw=true" alt="">
+            
+            <p><br></p>
+            <p><br></p>
+
+            <p>
+                Hmmmm, let's make a top ten list so we can have a clear overview of the plot and arrange it in descending order.
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="700" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/17.embed"></iframe>
+        
+
+            <img src="https://github.com/victoras24/portfolio/blob/main/assets/top10.png?raw=true" alt="">
+
+            <p><br></p>
+            <p><br></p>
+
+            <p>
+
+                By far, Mercedes is the brand that is being sold the most, as indicated by the plot I analyzed.
+                This result suggests that Mercedes has a strong market presence and high consumer demand, possibly due to its reputation for luxury and quality. 
+                However, it's worth noting that this conclusion is based on data from a specific car marketplace website and may not reflect the entire global market for cars.
+
+            </p>
+
+            <p><br></p>
+
+            <p>
+
+                I wanted to find out which transmission is the most commonly used among all the cars being sold. 
+                Although I had an idea of the answer, I wanted to see a plot to better understand the difference. 
+
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+        <ul class="trans-count">    
+
+            <li>
+
+                <iframe width="600" height="450" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/29.embed"></iframe>
+            
+                <img class="pie-char" src="https://github.com/victoras24/portfolio/blob/main/assets/pie-chart.png?raw=true" alt="">
+
+            </li>
+
+            <li>
+
+                <img class="transmission-count" src="https://github.com/victoras24/portfolio/blob/main/assets/trans-count.png?raw=true" alt="">
+            
+            </li>
+
+        </ul>
+
+        <p><br></p>
+        <p><br></p>
+
+        <p>
+            
+            Based on the data, it's clear that the majority of cars sold (71.6%) have automatic transmissions, 
+            while manual transmissions account for 28.2%. The remaining vehicles are those without gearboxes. 
+            To determine whether the trend towards automatic transmissions is due to the popularity of newer cars, 
+            we can conduct further analysis to see if most of the vehicles sold are relatively new. It's possible 
+            that the high number of automatic transmissions could be attributed to both their ease of use and the 
+            increased availability of these features in newer vehicles. Further investigation will give us a better 
+            understanding of the driving factors behind this trend.
+
+        </p>
+
+        <p><br></p>
+        <p><br></p>
+
+        <iframe width="1100" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/40.embed"></iframe>
+
+        <img src="https://github.com/victoras24/portfolio/blob/main/assets/year-count.png?raw=true" alt="">
+        
+        <p><br></p>
+        <p><br></p>
+
+        <p>
+
+            Most of the cars in our data are 10 years old, which could be a reason for having more automatic 
+            transmissions than manual transmissions.
+
+        </p>
+
+        <p><br></p>
+
+        <p>
+
+            Lastly, I wanted to examine if there is any correlation between the number of kilometers driven and the price of a car
+
+        </p>
+
+        <p><br></p>
+        <p><br></p>
+
+        <iframe width="1100" height="500" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/42.embed"></iframe>
+
+        <img src="https://github.com/victoras24/portfolio/blob/main/assets/correlation.png?raw=true" alt="">
+
+        <p><br></p>
+        <p><br></p>
+
+        <p>
+
+            I had to remove outliers that were affecting my analysis and plot. Some of the values for kilometers were displayed as extremely high, such as 1111111111 and 555555555. 
+            So, to resolve this, I eliminated all kilometers values that were greater than 1 million.<p><br></p> <pre><code>drop_outliers = data_frame[data_frame['Km'] < 1000000]</code></pre> <img src="https://github.com/victoras24/portfolio/blob/main/assets/code1.png?raw=true" alt=""><p><br></p>
+            
+            <p>
+                
+                There is a negative correlation between the price and number of kilometers driven. Typically, more expensive cars have lower kilometers driven. However, there are some exceptions, such as a Mercedes with 400,000 kilometers driven and a price of 150,000. 
+                I used the following query to gather more information about this specific car.
+                <p><br></p> <pre><code>drop_outliers.query('Brand == "Mercedes-Benz" and Price == 155000 and Km == 400000')</code></pre>
+                <img src="https://github.com/victoras24/portfolio/blob/main/assets/code2.png?raw=true" alt="">
+            </p> 
+
+            <p><br></p>
+
+            <p>
+
+                To conclude, I am wrapping up my first project on the analysis of car data collected from a marketplace 
+                website. I have included a pairplot that you can explore to uncover interesting insights. Please check out 
+                my Git repository to access the Jupyter notebook where I conducted data collection, export, cleaning, processing, and analysis.
+            
+            </p>
+
+            <p><br></p>
+            <p><br></p>
+
+            <iframe width="1100" height="550" frameborder="0" scrolling="no" src="https://plotly.com/~fin17217/43.embed"></iframe>
 
 
-      </main>
+            <img src="https://github.com/victoras24/portfolio/blob/main/assets/pair-plot.png?raw=true" alt="">
 
-  </body>
+            <p><br></p>
+            <p><br></p>
+
+        </section>
+    
+    </main>
+</body>
 </html>
+
